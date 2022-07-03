@@ -48,5 +48,15 @@ function makeGrid(numberOfBoxes, size) {
 
 function changeColorOnHover(e) {
     let boxCurrentlyOver = document.querySelector(`.${e.target.classList[1]}`);
-    boxCurrentlyOver.style.backgroundColor = 'yellow';
+    boxCurrentlyOver.style.backgroundColor = randomColorRGB();
+}
+function randomColorRGB() {
+    let r = randomNumberFrom1to255();
+    let g = randomNumberFrom1to255();
+    let b = randomNumberFrom1to255();
+    return `rgb(${r},${g},${b})`;
+}
+
+function randomNumberFrom1to255 () {
+    return (Math.floor(Math.random()*256));
 }
